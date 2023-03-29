@@ -14,6 +14,7 @@ public class Main {
         tk.setTentk(sc.nextLine());
         System.out.print("Nhap so tien dang co trong tai khoan: ");
         tk.setSotien(sc.nextDouble());
-        tk.rutTien();
+//        tk.rutTien();
+        tk.napTien();
     }
 }

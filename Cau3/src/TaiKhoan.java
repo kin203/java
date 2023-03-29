@@ -5,14 +5,16 @@ public class TaiKhoan {
     private String tentk;
     private double sotien;
     Scanner sc = new Scanner(System.in);
-    public TaiKhoan(){
+
+    public TaiKhoan() {
 
     }
-    public TaiKhoan(int sotk, String tentk, double sotien){
+
+    public TaiKhoan(int sotk, String tentk, double sotien) {
         super();
-        this.sotk=sotk;
-        this.tentk=tentk;
-        this.sotien=sotien;
+        this.sotk = sotk;
+        this.tentk = tentk;
+        this.sotien = sotien;
     }
 
     public int getSotk() {
@@ -73,11 +75,23 @@ public class TaiKhoan {
             NumberFormat currencyEN = NumberFormat.getCurrencyInstance();
             String str1 = currencyEN.format(rut);
             System.out.println("Bạn vừa rút " + str1 + "Đ từ tài khoản. Phí là $5.");
-            System.out.println("So du tai khoan la : $"+sotien);
+            System.out.println("So du tai khoan la : $" + sotien);
         } else {//ngược lại nếu số tiền rút lớn hơn số tiền có trong tài khoản thì không hợp lệ
             System.out.println("Số tiền muốn rút không hợp lệ!");
             return rutTien();
         }
         return rut;
+    }
+
+    public double napTien() {
+        double nap;
+        System.out.print("Nhap so tien can nap: ");
+        nap = sc.nextDouble();
+        sotien = sotien + nap;
+        NumberFormat currencyEN = NumberFormat.getCurrencyInstance();
+        String str1 = currencyEN.format(nap);
+        System.out.println("ban vua nap " + str1 + "vao tai khoan.");
+        System.out.println("So du tai khoan la : $" + sotien);
+        return nap;
     }
 }
