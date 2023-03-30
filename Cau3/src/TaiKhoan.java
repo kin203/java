@@ -50,19 +50,6 @@ public class TaiKhoan {
                 ", sc=" + sc +
                 '}';
     }
-//    public double napTien(){
-//        System.out.println("Nhập số tài khoản khách hàng cần nạp tiền: ");
-//        s = sc.nextLong();
-//        for (int i = 0; i < n; i++) {
-//            d = a[i].getSoTK();
-//            if (s == d) {
-//                System.out.println("Bạn chọn tài khoản: " + d);
-//                a[i].napTien();
-//            } else {
-//                System.out.println("");
-//            }
-//        }
-//    }
 
     public double rutTien() {
         double phi = 5;
@@ -74,9 +61,9 @@ public class TaiKhoan {
             sotien = sotien - (rut + phi);
             NumberFormat currencyEN = NumberFormat.getCurrencyInstance();
             String str1 = currencyEN.format(rut);
-            System.out.println("Bạn vừa rút " + str1 + "Đ từ tài khoản. Phí là $5.");
+            System.out.println("Bạn vừa rút " + str1 + " từ tài khoản. Phí là $5.");
             System.out.println("So du tai khoan la : $" + sotien);
-        } else {//ngược lại nếu số tiền rút lớn hơn số tiền có trong tài khoản thì không hợp lệ
+        } else {
             System.out.println("Số tiền muốn rút không hợp lệ!");
             return rutTien();
         }
@@ -94,4 +81,32 @@ public class TaiKhoan {
         System.out.println("So du tai khoan la : $" + sotien);
         return nap;
     }
-}
+    public double chuyenKhoan() {
+        double ck =0;
+        int stk;
+        int stkn;
+        System.out.print("Nhập số tai khoan ban can chuyen khoan toi: ");
+        stk = sc.nextInt();
+        do {
+            System.out.print("\nChon so tai khoan nguon :");
+            stkn = sc.nextInt();
+            if(stkn!=getSotk()) {
+                System.out.print("Nhap lai tk nguon ! \n");
+            }
+            }while (stkn != getSotk());
+        System.out.print("Nhập số tiền bạn cần chuyen: ");
+        ck = sc.nextDouble();
+        //nếu số tiền rút bé hơn hoặc bằng số tiền còn trong tài khoản + phí thì hợp lệ
+        if (ck <= (sotien)) {
+            sotien = sotien - ck;
+            NumberFormat currencyEN = NumberFormat.getCurrencyInstance();
+            String str1 = currencyEN.format(ck);
+            System.out.println("Bạn vừa chuyen " + str1 + " từ tài khoản. toi tai khoan " + stk);
+            System.out.println("So du tai khoan " + getSotk() + " la : $" + sotien);
+        } else {//ngược lại nếu số tiền rút lớn hơn số tiền có trong tài khoản thì không hợp lệ
+            System.out.println("Số tiền muốn rút không hợp lệ!");
+            return chuyenKhoan();
+        }
+        return ck;
+        }
+    }

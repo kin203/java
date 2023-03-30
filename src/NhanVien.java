@@ -37,7 +37,6 @@ public class NhanVien {
                 ", luong=" + luong +
                 '}';
     }
-
     public  double luongtheonam(){
         return this.luong*12;
     }
