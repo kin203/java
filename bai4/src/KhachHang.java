@@ -1,23 +1,24 @@
 public class KhachHang {
-    private int maKH;
+    private String maKH;
     private String tenKH;
     private String diaChi;
+    public static int KH_NUMBER=0;
 
     public KhachHang() {
-
+    KH_NUMBER++;
+    this.maKH="KH"+KH_NUMBER;
     }
-    public KhachHang(int maKH,String tenKH,String diaChi){
-        this.maKH=maKH;
+    public KhachHang(String tenKH,String diaChi){
+        KH_NUMBER++;
+        this.maKH="KH"+KH_NUMBER;
         this.tenKH=tenKH;
         this.diaChi=diaChi;
     }
 
-    public int getMaKH() {
-        return maKH;
-    }
+    //get/set
 
-    public void setMaKH(int maKH) {
-        this.maKH = maKH;
+    public String getMaKH() {
+        return maKH;
     }
 
     public String getTenKH() {

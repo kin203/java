@@ -4,21 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
         TaiKhoan tk=new TaiKhoan();
-        int k, b, n = 0;
-        long s, d, c, f;
+        int  b = 0;
         boolean flag = true;
-        System.out.println("Nhập số tài khoản: ");
+        System.out.println("Nhap so tai khoan: ");
         tk.setSotk(sc.nextInt());
         sc.nextLine();
-        System.out.println("Nhập tên tài khoản: ");
+        System.out.println("Nhap ten tai khoan: ");
         tk.setTentk(sc.nextLine());
         System.out.print("Nhap so tien dang co trong tai khoan: ");
         tk.setSotien(sc.nextDouble());
         do {
-            System.out.print("CHon chuc nang ban can :\n");
+            System.out.print("Chon chuc nang ban can :\n");
             System.out.println("===================================\n"+
                     "1.Nap tien\n"
-                    + "2.Rut tien\n" + "3.Chuyen Khoan\n" + "Số khác để thoát"+"\n===================================");
+                    + "2.Rut tien\n" + "3.Chuyen Khoan\n" + "So khac de thoat"+"\n===================================");
             b = sc.nextInt();
             switch (b) {
                 case 1:
