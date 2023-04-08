@@ -11,9 +11,6 @@ public class NhanVien {
     public int getManv(){
         return manv;
     }
-    public void setManv(int manv){
-        this.manv=manv;
-    }
     public String gethoten(){
         return hoten;
     }

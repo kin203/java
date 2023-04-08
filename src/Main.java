@@ -1,4 +1,4 @@
-public class KiemTra {
+public class Main {
     public static void main(String[] args) {
         NhanVien nv=new NhanVien(01, "Nguyen Xuan Kien", 50000);
         System.out.println(nv);

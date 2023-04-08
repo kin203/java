@@ -18,10 +18,6 @@ public class HoaDon {
         return maHD;
     }
 
-    public void setMaHD(int maHD) {
-        this.maHD = maHD;
-    }
-
     public String getMoTa() {
         return moTa;
     }
